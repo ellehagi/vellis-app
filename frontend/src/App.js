@@ -6,7 +6,7 @@ import HomeScreen from './components/home/HomeScreen';
 import ProductScreen from './Screens/ProductScreen'
 import Header from './components/Header'
 import CartScreen from './Screens/CartScreen'
-import './App.css';
+
 
 
 
