@@ -6,12 +6,12 @@ import HomeScreen from './components/home/HomeScreen';
 import ProductScreen from './Screens/ProductScreen'
 import Header from './components/Header'
 import CartScreen from './Screens/CartScreen'
+import LoginScreen from './Screens/LoginScreen'
 
 
 
 
-
-function App() {
+const App = () => {
   return (
     <Router>
       <Container>
@@ -20,6 +20,7 @@ function App() {
       <Route path='/MenuScreen' component={MenuScreen} />
       <Route path='/product/:id' component={ProductScreen} />
       <Route path='/cart/:id?' component={CartScreen} />
+      <Route path='/login' component={LoginScreen} />
       </Container>
     </Router>
   );

@@ -13,7 +13,7 @@ const HomeScreen = () => {
     <HomeContainer>
       <HomeContent>
         <HomeItems>
-          <HomeP>Ready in 60 seconds</HomeP>
+          <HomeP>Ready in 5 Minutes</HomeP>
           <Link to='/MenuScreen'><HomeBtn>
           Place Order
             </HomeBtn>
