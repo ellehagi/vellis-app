@@ -14,6 +14,7 @@ const dispatch = useDispatch()
 
 const productList = useSelector((state) => state.productList)
 const { loading, error, products } = productList
+console.log(productList)
 
 useEffect(() => {
 dispatch(listProducts())
@@ -32,7 +33,8 @@ dispatch(listProducts())
    <Message variant='danger'>{error}</Message> 
    ) : ( 
   <Row>
-    {products.map((product) => (
+    {products.length > 0 && 
+    products.map((product) => (
      <Col key={product._id} sm={5} md={6} lg={4} xl={0}>
        <Product product={product} />
      </Col>
