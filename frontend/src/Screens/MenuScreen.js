@@ -35,7 +35,7 @@ dispatch(listProducts())
   <Row>
     {products.length > 0 && 
     products.map((product) => (
-     <Col key={product._id} sm={5} md={6} lg={4} xl={0}>
+     <Col className="imgs" key={product._id} sm={5} md={5} lg={4} xl={0}>
        <Product product={product} />
      </Col>
     ))}
