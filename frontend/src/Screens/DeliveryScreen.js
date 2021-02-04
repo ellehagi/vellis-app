@@ -2,17 +2,28 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
+import CheckoutSteps from '../components/CheckoutSteps'
+import { saveDeliveryAddress } from '../actions/cartActions'
 
-const DeliveryScreen = ({ history }) => {
-    const [address, setAddress] = useState('')
-    const [postalCode, setPostalCode] = useState('')
+const DeliveryScreen = ({ history, location }) => {
+
+  const cart = useSelector(state => state.cart)
+  const { deliveryAddress } = cart
+
+    const [address, setAddress] = useState(deliveryAddress.address)
+    const [postalCode, setPostalCode] = useState(deliveryAddress.postalCode)
+
+    const dispatch = useDispatch()
 
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log('submit')
+        dispatch(saveDeliveryAddress({ address, postalCode }))
+        history.push('/payment')
+        ///window.location.replace('/payment')
     }
   
     return<FormContainer>
+      <CheckoutSteps step1 step2/>
           <h1>Delivery</h1>
           <Form onSubmit={submitHandler}>
           <Form.Group controlId='address'>
