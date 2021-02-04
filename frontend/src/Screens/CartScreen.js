@@ -27,7 +27,7 @@ const removeFromCartHandler = (id) => {
 }
 
 const checkoutHandler = () => {
-    history.push('/login?redirect=shipping')
+    history.push('/login?redirect=delivery')
 }
     return (
         <Row>
