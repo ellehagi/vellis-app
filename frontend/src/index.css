@@ -22,5 +22,8 @@ h3 {
   }
 
   .imgs {
-    flex: 25%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border:2px blue;
 }

@@ -17,7 +17,7 @@
      countInStock: 10
    },
    {
-     images: '/images/pizza3.png',
+     images: '/images/pizza-7.png',
      name: 'Veggie Overload',
      desc: 'Fresh spinach, sweetcorn, mixed peppers, red onions & mushrooms.',
      price: '10.99',

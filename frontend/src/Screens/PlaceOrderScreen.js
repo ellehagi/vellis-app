@@ -8,9 +8,10 @@ import { createOrder } from '../actions/orderActions'
 
 const PlaceOrderScreen = () => {
    const cart = useSelector(state => state.cart)
-
    const placeOrderHandler = () => {
-    dispatch(
+   }
+   /* const placeOrderHandler = () => {
+    useDispatch(
       createOrder({
         orderItems: cart.cartItems,
         deliveryAddress: cart.deliveryAddress,
@@ -20,7 +21,7 @@ const PlaceOrderScreen = () => {
         totalPrice: cart.totalPrice,
       })
     )
-   }
+   } */
 
    //   Calculate prices
  cart.itemsPrice = cart.cartItems.reduce(
@@ -29,11 +30,9 @@ const PlaceOrderScreen = () => {
    0
  )
 
- cart.deliveryPrice = cart.cartItems.reduce(
-    (acc, item) => acc + item.price * item.qty,
+ cart.deliveryPrice = 0
+  
 
-  0
-)
 
 cart.totalPrice = cart.cartItems.reduce(
     (acc, item) => acc + item.price * item.qty,
@@ -137,4 +136,4 @@ cart.totalPrice = cart.cartItems.reduce(
   )
 }
 
-export default PlaceOrderScreen;
+export default PlaceOrderScreen; 

@@ -23,27 +23,26 @@ dispatch(listProducts())
 
 )
 
+return (
+  <>
+  <h1>menu</h1>
+{loading ? ( 
+<Loader />
+ ) : error ? (  
+ <Message variant='danger'>{error}</Message> 
+ ) : ( 
+<Row>
+  {products.length > 0 && 
+  products.map((product) => (
+   <Col className="imgs" key={product._id} sm={5} md={5} lg={4} xl={0}>
+     <Product product={product} />
+   </Col>
+  ))}
+</Row>
+ )}
 
-  return (
-    <>
-    <h1>menu</h1>
-  {loading ? ( 
-  <Loader />
-   ) : error ? (  
-   <Message variant='danger'>{error}</Message> 
-   ) : ( 
-  <Row>
-    {products.length > 0 && 
-    products.map((product) => (
-     <Col className="imgs" key={product._id} sm={5} md={5} lg={4} xl={0}>
-       <Product product={product} />
-     </Col>
-    ))}
-  </Row>
-   )}
-
-  </>
-  )
+</>
+)
 }
 
 export default MenuScreen;
